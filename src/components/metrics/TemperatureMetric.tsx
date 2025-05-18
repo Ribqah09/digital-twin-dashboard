@@ -20,8 +20,9 @@ export function TemperatureMetric({
 }: TemperatureMetricProps) {
   const getStateColor = () => {
     if (value >= criticalThreshold) return "text-dashboard-accent-red";
-    if (value >= warningThreshold) return "text-dashboard-accent-yellow";
-    return "text-dashboard-accent-green";
+    if (value >= warningThreshold) return "text-orange-500";
+    if (value >= warningThreshold * 0.9) return "text-yellow-400";
+    return "text-green-500";
   };
 
   const getAnimation = () => {

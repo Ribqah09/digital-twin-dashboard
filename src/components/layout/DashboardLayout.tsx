@@ -12,7 +12,7 @@ export const DashboardLayout = ({ children, title }: DashboardLayoutProps) => {
       <header className="border-b border-muted p-4">
         <div className="container mx-auto flex items-center justify-between">
           <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-            <span className="text-primary">Motor</span>Vibe Dashboard
+            <span className="text-primary">Epsilon AI</span>Motor Monitoring System
           </h1>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">

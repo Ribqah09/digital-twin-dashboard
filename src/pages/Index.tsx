@@ -5,6 +5,7 @@ import { DashboardCard } from "@/components/ui/dashboard-card";
 import { GaugeMetric } from "@/components/metrics/GaugeMetric";
 import { TemperatureMetric } from "@/components/metrics/TemperatureMetric";
 import { WaveformVisualization } from "@/components/metrics/WaveformVisualization";
+import { PredictiveMaintenance } from "@/components/metrics/PredictiveMaintenance";
 import { getMotorData, MotorData } from "@/services/motorDataService";
 import { ArrowUp, ArrowDown, Gauge, Thermometer, AudioWaveform } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
@@ -50,7 +51,7 @@ const Index = () => {
                 max={50}
                 color="bg-dashboard-accent-blue"
                 icon={<ArrowUp className="h-5 w-5" />}
-                warning={{ min: 5, max: 40 }}
+                warning={{ min: 15, max: 35 }}
               />
               <GaugeMetric
                 title="Phase B Current"
@@ -60,7 +61,7 @@ const Index = () => {
                 max={50}
                 color="bg-dashboard-accent-purple"
                 icon={<ArrowUp className="h-5 w-5" />}
-                warning={{ min: 5, max: 40 }}
+                warning={{ min: 15, max: 35 }}
               />
               <GaugeMetric
                 title="Phase C Current"
@@ -70,7 +71,7 @@ const Index = () => {
                 max={50}
                 color="bg-dashboard-accent-green"
                 icon={<ArrowUp className="h-5 w-5" />}
-                warning={{ min: 5, max: 40 }}
+                warning={{ min: 15, max: 35 }}
               />
             </div>
           )}
@@ -151,9 +152,15 @@ const Index = () => {
         </DashboardCard>
       </div>
 
-      <DashboardCard title="Vibration Analysis">
-        <WaveformVisualization color="#8B5CF6" />
-      </DashboardCard>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <DashboardCard title="Vibration Analysis">
+          <WaveformVisualization color="#8B5CF6" />
+        </DashboardCard>
+        
+        <DashboardCard title="Predictive Maintenance Analysis">
+          <PredictiveMaintenance motorData={motorData} />
+        </DashboardCard>
+      </div>
     </DashboardLayout>
   );
 };
