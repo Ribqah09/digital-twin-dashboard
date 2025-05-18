@@ -15,8 +15,8 @@ export function DashboardCard({
   className,
 }: DashboardCardProps) {
   return (
-    <Card className={cn("overflow-hidden bg-dashboard-card-bg border-muted", className)}>
-      <div className="border-b border-muted p-4">
+    <Card className={cn("overflow-hidden bg-black/30 backdrop-blur-sm border-white/10", className)}>
+      <div className="border-b border-white/10 p-4">
         <h3 className="font-medium text-white">{title}</h3>
       </div>
       <div className="p-4">{children}</div>
