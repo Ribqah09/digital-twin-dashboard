@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { Waveform } from "lucide-react";
+import { AudioWaveform } from "lucide-react";
 
 interface WaveformVisualizationProps {
   data?: { time: number; value: number }[];
@@ -51,7 +51,7 @@ export function WaveformVisualization({
   return (
     <div className="p-2">
       <div className="flex items-center space-x-2 mb-4">
-        <Waveform className="text-dashboard-accent-blue h-5 w-5" />
+        <AudioWaveform className="text-dashboard-accent-blue h-5 w-5" />
         <h3 className="text-sm font-medium">Real-Time Vibration</h3>
       </div>
       <div className="h-[240px]">

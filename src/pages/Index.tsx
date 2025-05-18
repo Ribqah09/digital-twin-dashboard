@@ -6,7 +6,7 @@ import { GaugeMetric } from "@/components/metrics/GaugeMetric";
 import { TemperatureMetric } from "@/components/metrics/TemperatureMetric";
 import { WaveformVisualization } from "@/components/metrics/WaveformVisualization";
 import { getMotorData, MotorData } from "@/services/motorDataService";
-import { ArrowUp, ArrowDown, Gauge, Thermometer, Waveform } from "lucide-react";
+import { ArrowUp, ArrowDown, Gauge, Thermometer, AudioWaveform } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 const Index = () => {
