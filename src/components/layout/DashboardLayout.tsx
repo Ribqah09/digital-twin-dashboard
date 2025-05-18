@@ -8,8 +8,8 @@ interface DashboardLayoutProps {
 
 export const DashboardLayout = ({ children, title }: DashboardLayoutProps) => {
   return (
-    <div className="min-h-screen text-white">
-      <header className="border-b border-white/10 p-4 bg-black/20 backdrop-blur-sm">
+    <div className="min-h-screen bg-dashboard-dark-bg text-white">
+      <header className="border-b border-muted p-4">
         <div className="container mx-auto flex items-center justify-between">
           <h1 className="text-2xl font-bold text-white flex items-center gap-2">
             <span className="text-primary">Epsilon AI</span>Motor Monitoring System
@@ -25,7 +25,7 @@ export const DashboardLayout = ({ children, title }: DashboardLayoutProps) => {
       <main className="container mx-auto px-4 py-6">
         <div className="mb-6">
           <h2 className="text-xl font-medium text-white">{title}</h2>
-          <p className="text-white/70">
+          <p className="text-muted-foreground">
             Real-time monitoring and analytics
           </p>
         </div>
@@ -33,4 +33,4 @@ export const DashboardLayout = ({ children, title }: DashboardLayoutProps) => {
       </main>
     </div>
   );
-}
+};

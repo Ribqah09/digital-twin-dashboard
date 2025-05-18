@@ -52,12 +52,6 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-[#1c3e72] to-[#5f89c2] text-foreground min-h-screen;
-  }
-}
-
-@layer utilities {
-  .dashboard-gradient {
-    @apply bg-gradient-to-br from-[#1c3e72] to-[#5f89c2];
+    @apply bg-dashboard-dark-bg text-foreground;
   }
 }
