@@ -15,11 +15,11 @@ export function DashboardCard({
   className,
 }: DashboardCardProps) {
   return (
-    <Card className={cn("overflow-hidden bg-white/10 backdrop-blur-sm border-white/20 shadow-lg", className)}>
-      <div className="border-b border-white/20 p-4 bg-white/5">
-        <h3 className="font-medium text-white tracking-wide">{title}</h3>
+    <Card className={cn("overflow-hidden bg-dashboard-card-bg border-muted", className)}>
+      <div className="border-b border-muted p-4">
+        <h3 className="font-medium text-white">{title}</h3>
       </div>
-      <div className="p-6">{children}</div>
+      <div className="p-4">{children}</div>
     </Card>
   );
 }
