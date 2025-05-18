@@ -8,12 +8,19 @@ interface DashboardLayoutProps {
 
 export const DashboardLayout = ({ children, title }: DashboardLayoutProps) => {
   return (
-    <div className="min-h-screen bg-dashboard-dark-bg text-white">
-      <header className="border-b border-muted p-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#1c3e72] to-[#5f89c2] text-white">
+      <header className="border-b border-muted/30 p-4 backdrop-blur-sm bg-white/10">
         <div className="container mx-auto flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-            <span className="text-primary">Epsilon AI</span>Motor Monitoring System
-          </h1>
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2">
+              <div className="text-4xl font-bold text-white">E</div>
+              <div>
+                <h1 className="text-xl font-bold text-white">EPSILON SYSTEMS</h1>
+                <p className="text-xs text-white/80 italic">Sense. Analyze. Automate. Monitor</p>
+              </div>
+            </div>
+            <p className="text-sm mt-1 text-white/90">Epsilon AI Motor Monitoring System</p>
+          </div>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
