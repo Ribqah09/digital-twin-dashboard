@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { CircleAlert, CircleCheck } from "lucide-react";
@@ -27,8 +26,9 @@ export function PredictiveMaintenance({ motorData }: PredictiveMaintenanceProps)
     // using the telemetry data from the motor
     const simulatePredictiveAnalysis = () => {
       // Analyze temperature trends
-      const tempStatus = motorData.temperature.t1 > 80 ? "warning" : 
-                        motorData.temperature.t1 > 70 ? "warning" : "healthy";
+      const tempStatus: "healthy" | "warning" | "critical" = 
+        motorData.temperature.t1 > 80 ? "warning" : 
+        motorData.temperature.t1 > 70 ? "warning" : "healthy";
       
       const tempLife = tempStatus === "warning" ? 
                       Math.round(120 - (motorData.temperature.t1 - 65) * 10) :
@@ -40,14 +40,16 @@ export function PredictiveMaintenance({ motorData }: PredictiveMaintenanceProps)
       const maxDeviation = Math.max(...currents.map(c => Math.abs(c - avgCurrent)));
       const imbalancePercent = (maxDeviation / avgCurrent) * 100;
       
-      const currentStatus = imbalancePercent > 10 ? "critical" : 
-                          imbalancePercent > 5 ? "warning" : "healthy";
+      const currentStatus: "healthy" | "warning" | "critical" = 
+        imbalancePercent > 10 ? "critical" : 
+        imbalancePercent > 5 ? "warning" : "healthy";
       
       const currentLife = currentStatus === "critical" ? 48 : 
                          currentStatus === "warning" ? 120 : 2000;
                          
       // Analyze vibration (would use actual vibration data in real application)
-      const vibrationStatus = Math.random() > 0.7 ? "warning" : "healthy";
+      const vibrationStatus: "healthy" | "warning" | "critical" = 
+        Math.random() > 0.7 ? "warning" : "healthy";
       const vibrationLife = vibrationStatus === "warning" ? 
                           Math.round(100 + Math.random() * 100) : 
                           Math.round(1000 + Math.random() * 1000);
@@ -63,7 +65,7 @@ export function PredictiveMaintenance({ motorData }: PredictiveMaintenanceProps)
         },
         {
           component: "Winding Insulation",
-          status: tempStatus as "healthy" | "warning" | "critical",
+          status: tempStatus,
           remainingLifeHours: tempLife,
           recommendation: tempStatus === "warning" ? 
                         "Monitor temperature trends; consider inspection" : 
@@ -71,7 +73,7 @@ export function PredictiveMaintenance({ motorData }: PredictiveMaintenanceProps)
         },
         {
           component: "Phase Balancing",
-          status: currentStatus as "healthy" | "warning" | "critical",
+          status: currentStatus,
           remainingLifeHours: currentLife,
           recommendation: currentStatus === "critical" ? 
                         "Immediate inspection required" : 
