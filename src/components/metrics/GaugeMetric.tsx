@@ -58,11 +58,11 @@ export function GaugeMetric({
   const isCritical = healthColor === "bg-dashboard-accent-red";
 
   return (
-    <div className="flex flex-col space-y-2 p-1">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-2 text-muted-foreground">
-          {icon}
-          <span className="text-sm">{title}</span>
+    <div className="flex flex-col space-y-2 p-1 sm:p-2">
+  <div className="flex items-center justify-between">
+    <div className="flex items-center space-x-2 text-muted-foreground">
+      {icon}
+      <span className="text-xs sm:text-sm">{title}</span>
         </div>
         <div className={cn("text-lg font-medium", 
           isCritical ? "text-dashboard-accent-red animate-pulse" : 
@@ -72,12 +72,7 @@ export function GaugeMetric({
           <span className="text-sm ml-1 text-muted-foreground">{unit}</span>
         </div>
       </div>
-      <Progress
-        value={percentage}
-        className="h-2 bg-muted"
-        // Pass the health color as a className
-        indicatorClassName={healthColor}
-      />
+      <Progress value={percentage} className="h-2 w-full bg-muted" indicatorClassName={healthColor} />
       <div className="flex justify-between text-xs text-muted-foreground">
         <span>{min}</span>
         <span>{max}</span>

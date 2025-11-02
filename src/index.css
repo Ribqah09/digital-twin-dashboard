@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,14 +43,23 @@
     --sidebar-border: 225 18% 20%;
     --sidebar-ring: 196 84% 49%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
-  body {
-    @apply bg-dashboard-dark-bg text-foreground;
-  }
+body {
+  @apply bg-company-gradient-professional text-foreground;
+}
+
+.card {
+  @apply bg-[#252D3C] text-card-foreground rounded-lg shadow-md p-4 sm:p-6 lg:p-8;
+}
+h1, h2, h3 {
+  @apply text-lg sm:text-xl md:text-2xl;
+}
+p {
+  @apply text-sm sm:text-base md:text-lg;
+}
+
 }
